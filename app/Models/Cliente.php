@@ -8,12 +8,13 @@ class Cliente extends Model
 {
     
     protected $fillable =  [
-        'nombre',
-        'apellido',
-        'celular',
-        'dni',
+        'nomcli',
+        'apecli',
+        'dnicli',
+        'celcli',
+        'ciudad',
         'distrito',
-        'direccion'
+        'dircli'
     ];
 
     public function Ventas(){

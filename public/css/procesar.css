@@ -93,3 +93,7 @@ legend{
 .paypal:hover{
     box-shadow: 0px 10px 15px -5px rgb(0, 132, 255); 
 }
+.text-danger{
+    color: red;
+    font-size: 13px;
+}

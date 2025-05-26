@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
-            $table->string('nomcLi','40');
+            $table->string('nomcli','40');
             $table->string('apecli','40');
             $table->string('dnicli','15')->unique();
             $table->string('celcli','13');
+            $table->string('ciudad');
+            $table->string('distrito');
             $table->string('dircli','150');
             $table->timestamps();
         });
