@@ -161,11 +161,8 @@ main {
     will-change: transform, filter;
 }
 
-
-
-
 .c-title-valores {
-    margin-top: 7%;
+    margin-top: 7%; 
     text-align: center;
     font-size: 40px;
     font-weight: bolder;
