@@ -166,6 +166,7 @@
                 </a>
                 <div class="product-data">
                     <p class="product-title">{{$c['nompro']}}</p>
+                    <p class="product-title">{{$c['quantity']}}</p>
                 </div>
             </article>
             @endforeach

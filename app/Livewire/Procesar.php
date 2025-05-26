@@ -3,10 +3,13 @@
 namespace App\Livewire;
 
 use App\Models\Cliente;
+use App\Models\DetalleVenta;
 use App\Models\Venta;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Livewire\Component;
+
+use function Livewire\store;
 
 class Procesar extends Component
 {
@@ -48,15 +51,17 @@ class Procesar extends Component
 
         $clientExist = Cliente::where('dnicli', $validatedCli['dnicli'])->first();
         if ($clientExist) {
-            $this->insertVenta($clientExist->id,$validatedVen);
+            $venta = $this->insertVenta($clientExist->id,$validatedVen);
+            $this->insertDetalleVenta($venta, $this->cart);
             session()->forget('cartsession');
             $this->dispatch('swal:success');
             return;
         }
         
         $cliente = Cliente::create($validatedCli);
-        $this->insertVenta($cliente->id,$validatedVen);
+        $venta = $this->insertVenta($cliente->id,$validatedVen);
 
+        $this->insertDetalleVenta($venta, $this->cart);
         session()->forget('cartsession');
         $this->dispatch('swal:success');
         
@@ -68,9 +73,30 @@ class Procesar extends Component
         $venta['metpagven'] = 'paypal';
         $venta['estven'] = 'pagado';
         $venta['fecven'] = Carbon::now();
-        Venta::create($venta);
+        $venta = Venta::create($venta);
+        return $venta;
+
     }
 
+    public function insertDetalleVenta($venta,$productos){
+        $ventid = $venta->id;
+        
+        foreach($productos as $pro){
+
+            $precio = (string) $pro['prepro'];
+            $cantidad = (string) $pro['quantity'];
+            $subtotal = bcmul($precio, $cantidad, 2);
+            $detail = new DetalleVenta();
+            $detail->codven = $ventid;
+            $detail->codprod = $pro['id'];
+            $detail->cantidad = (int) $cantidad;
+            $detail->precio = (float) $precio;
+            $detail->subtotal = $subtotal;
+            $detail->fecdetven = Carbon::now();
+            $detail->save();
+            
+        }
+    }
     
 
     public function render()
