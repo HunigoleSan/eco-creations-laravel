@@ -9,6 +9,7 @@
         <h2 class="cart-title">Tús productos</h2>
     </section>
     <form class='form-client' method="post">
+        <!-- DATOS DEL CLIENTE -->
         <fieldset>
             <legend>Información del cliente</legend>
             <p>Información del cliente</p>
@@ -44,6 +45,42 @@
                     @enderror
                 </div>
             </div>
+            <div class="d-flex g-small">
+                <div class="form-group flex-full">
+                    <label for="">Ciudad</label>
+                    <select class="control flex-full" name="ciudad" id="ciudad">
+                        <option selected disabled value="">Seleccionar</option>
+                        <option value="boleta">Lima</option>
+                        <option value="factura">Arequipa</option>
+                        <option value="factura">Trujillo</option>
+                        <option value="factura">Cusco</option>
+                        <option value="factura">Chiclayo</option>
+                    </select>
+                    @error('ciudad')
+                    <p class="alert-error">{{$message}}</p>
+                    @enderror
+                </div>
+                <div class="form-group flex-full">
+                    <label for="">Distrito</label>
+                    <select class="control flex-full" name="distrito" id="distrito">
+                        <option selected disabled value="">Seleccionar</option>
+                        <option value="boleta">Miraflores</option>
+                        <option value="factura">San isidro</option>
+                        <option value="factura">Cerdado de Arequipa</option>
+                        <option value="factura">Yanahuara</option>
+                        <option value="factura">Trujillo Cercado</option>
+                        <option value="factura">La Esperanza</option>
+                        <option value="factura">Cusco Cercado</option>
+                        <option value="factura">San Sebastián</option>
+                        <option value="factura">José Leonardo Ortiz</option>
+                        <option value="factura">La victoria</option>
+                    </select>
+                    @error('distrito')
+                    <p class="alert-error">{{$message}}</p>
+                    @enderror
+                </div>
+
+            </div>
             <div class="form-group flex-full">
                 <label for="">Dirección</label>
                 <input class="control" type="text" name="direccion" id="direccion">
@@ -51,10 +88,43 @@
                 <p class="alert-error">{{$message}}</p>
                 @enderror
             </div>
+
         </fieldset>
+        <!-- DATOS DE LA VENTA -->
         <fieldset>
-            <legend>Metodo de pago</legend>
-            <p>Metodo de pago</p>
+            <legend>Información de pago</legend>
+            <p>Información de pago</p>
+            <div class="d-flex g-small">
+                <div class="form-group flex-full">
+                    <label for="nombre">Tipo de comprobante</label>
+                    <select class="control flex-full" name="tipo_comprobante" id="tipo_comprobante">
+                        <option selected disabled value="">Seleccionar</option>
+                        <option value="boleta">Boleta</option>
+                        <option value="factura">Factura</option>
+                    </select>
+                    @error('nombre')
+                    <p class="alert-error">{{$message}}</p>
+                    @enderror
+                </div>
+                
+            </div>
+            <div class="form-group flex-full">
+                    <label for="">metodo de pago</label>
+                    <div class="container-metodo">
+                        <article class="btn metodo_pago yape">Yape</article>
+                        <article class="btn metodo_pago tarjeta">Tarjeta de credito</article>
+                        <article class="btn metodo_pago paypal">Paypal</article>
+                    </div>
+                    @error('metodo_pago')
+                    <p class="alert-error">{{$message}}</p>
+                    @enderror
+                </div>
+            
+        </fieldset>
+        <!-- METODO DE PAGO -->
+        <fieldset>
+            <legend>Información de Tarjeta</legend>
+            <p>Información de Tarjeta</p>
             <div class="form-group mb-small">
                 <label for="">Informacion de tarjeta</label>
                 <input class="control" type="text" name="number-code" id="number-code" placeholder="XXXX-XXXX-XXXX-XXXX">
@@ -77,6 +147,7 @@
             </div>
             <div wire:click="payment" class="btn btn-green">Realizar Compra</div>
         </fieldset>
+        <!-- Listar todos sus productos -->
         <fieldset>
             <legend>Productos</legend>
             <p>Tús productos</p>

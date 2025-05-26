@@ -21,4 +21,10 @@ class Producto extends Model
     public function categoria(){
         return $this->belongsTo(Categoria::class,'codcatg');
     }
+
+    public function ventas(){
+        return $this->belongsToMany(Venta::class,'detalle_ventas','codprod','codven')
+            ->withPivot('cantidad','precio','subtotal')
+            ->withTimestamps();
+    }
 }
