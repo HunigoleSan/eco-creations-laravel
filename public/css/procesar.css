@@ -1,0 +1,64 @@
+body{
+    background: rgb(253, 255, 253);
+}
+.back{
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1rem;
+    border-bottom: 1px solid rgb(234, 240, 233);
+
+}
+.form-client{
+    width: 100%;
+    justify-content: center;
+    color: var(--text-primary);
+    max-width: 700px;
+    margin: 0 auto;
+    
+}
+
+fieldset{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 3rem;
+    flex: 1;
+    border: 0;
+    gap: .5rem;
+    position: relative;
+}
+fieldset:nth-child(1){
+    padding-bottom: 0rem;
+}
+fieldset:nth-child(2){
+    padding-top: 1rem;
+}
+
+
+legend{
+    display: none;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+}
+.form-group > label{
+    font-size: 13px;
+}
+.control{
+    padding: 8px 12px;
+    border: 1px solid rgb(227, 243, 225);
+    border-radius: 4px;
+}
+.control{
+    outline: none;
+}
+.control:focus{
+    border-color: #00A64E;
+}
+.card-config{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}

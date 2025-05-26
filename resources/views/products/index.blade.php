@@ -6,6 +6,7 @@
 @endpush
 
 @section('content')
+
 <section class="nav-category">
     <ul class="list list-custom-nav-category">
         <li class="dropdown-hover">
@@ -58,9 +59,9 @@
 <section class="containerProducts">
     <!-- AQUI SE MUESTRA TODOS LOS PRODUCTOS -->
     @foreach($products as $pro)
-        <x-product-card :pro="$pro"></x-product-card>
-
+        @livewire('product-card',['pro' => $pro])
     @endforeach
 </section>
+
 
 @endsection

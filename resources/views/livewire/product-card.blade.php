@@ -1,4 +1,4 @@
-<!-- <article class="card">
+<article key: class="card">
     <a href="{{route('productos.details',$pro->id)}}" >
         <img id='{{$pro->id}}' class="product-img" src="{{asset('img/login/'. $pro->imgpro)}}" alt="{{$pro->nombre}}">
     </a>
@@ -7,7 +7,7 @@
         <p class="product-description">{{$pro->descpro}}</p>
         <div class="product-cart">
             <span class="current-price">{{$pro->prepro}}</span>
-            <div wire:click="$emit('addCart',{{$pro->id}})" id="card_button_${{$pro->id}}}" class="product-add">
+            <div wire:click="enviarId({{ $pro->id }})" id="card_button_{{$pro->id}}}" class="product-add">
                 <svg class="cart-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10.5 21C11.3284 21 12 20.3284 12 19.5C12 18.6716 11.3284 18 10.5 18C9.67157 18 9 18.6716 9 19.5C9 20.3284 9.67157 21 10.5 21Z" fill="white" />
                     <path d="M17.5 21C18.3284 21 19 20.3284 19 19.5C19 18.6716 18.3284 18 17.5 18C16.6716 18 16 18.6716 16 19.5C16 20.3284 16.6716 21 17.5 21Z" fill="white" />
@@ -20,6 +20,3 @@
 
     </div>
 </article>
-
-
-  <button wire:click="$emitTo('carrito', 'addCart', 1)">Añadir Producto de prueba</button> -->

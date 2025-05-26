@@ -12,9 +12,11 @@ Route::get('/contacto' , [PageController::class, 'contact'])->name('contact');
 Route::post('/contacto' , [PageController::class, 'sendContact'])->name('contact.send');
 
 
+
 Route::get('/productos', [ProductoController::class,'index'])->name('productos.index');
 Route::get('/productos/{product}',[ProductoController::class,'show'])->name('productos.details');
 Route::get('/productos/categoria/{categoria}',[ProductoController::class,'category'])->name('productos.category');
+Route::get('/procesar',function (){return view('procesar.index');})->name('procesar.index');
 
 
 // Definición de la ruta de inicio de sesión para ingresar al panel de administración
@@ -22,3 +24,4 @@ Route::get('/productos/categoria/{categoria}',[ProductoController::class,'catego
 // El nombre de la ruta debe ser 'login' para que el middleware de autenticación redirija aquí 
 // automáticamente si un usuario no autenticado intenta acceder a una ruta protegida.
 Route::get('/lv-admin', [AuthController::class, 'login'])->name('login');
+

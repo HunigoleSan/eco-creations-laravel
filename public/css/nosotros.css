@@ -276,3 +276,84 @@ main {
 .pulse {
     animation: pulse 0.6s ease;
 }
+
+/* Responsive */
+
+@media screen and (max-width: 1024px) {
+    .c-p-p-valores {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .c-p-valores:nth-child(4) {
+        grid-column: span 3;
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .c-p-p-valores {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .c-p-valores:nth-child(4) {
+        grid-column: span 1;
+        width: 80%;
+    }
+
+    .c-img-fondo-2 {
+        width: 200px;
+    }
+
+    .c-img-superpuesta-2 {
+        width: 220px;
+    }
+
+    .c-img-fondo-1{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .c-p-p-valores {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .c-p-valores:nth-child(4) {
+        grid-column: span 1;
+        width: 80%;
+    }
+
+    .c-img-fondo-2 {
+        width: 100px;
+    }
+
+    .c-img-superpuesta-2 {
+        width: 120px;
+    }
+
+    .c-img-fondo-1{
+        width: 50%;
+    }
+
+    .c-section-center h1 {
+        font-size: 30px;
+    }
+
+    .c-img-superpuesta-1{
+        width: 100%;
+        right: 45px;
+    }
+
+    .c-p-mision-vision{
+        flex-direction: column;
+        gap: 8rem;
+    }
+
+    h2{
+        font-size: 20px;
+    }
+
+    .contenido-valores h2{
+        font-size: 15px;
+    }
+}

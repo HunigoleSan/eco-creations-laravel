@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
     <link rel="stylesheet" href="{{ asset('css/header.css') }}">
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/carrito.css') }}">
     @stack('styles')
-
+    @livewireStyles
 </head>
 
 <body>
@@ -56,6 +57,8 @@
             </button>
         </nav>
     </header>
+    
+    @livewire('carrito')
 
     <ul class="list-mobile">
         <li class="list-item"><a class="link" href="{{route('home')}}">Inicio</a></li>
@@ -189,6 +192,8 @@
     </footer>
 
     <script src="{{ asset('js/headerMobile.js') }}"></script>
+    @livewireScripts
+    <script src="{{ asset('js/cart.js') }}"></script>
 </body>
 
 </html>

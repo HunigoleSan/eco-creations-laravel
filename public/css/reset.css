@@ -27,6 +27,9 @@ img{
 .mb-1{
     margin-bottom: 1rem;
 }
+.mb-small{
+    margin-bottom: .5rem;
+}
 .d-flex{
     display: flex;
 }
@@ -35,6 +38,9 @@ img{
 }
 .g-1{
     gap: 1rem;
+}
+.g-small{
+    gap: .5rem;
 }
 .flex-full{
     flex: 1;
@@ -48,6 +54,13 @@ img{
     border-radius: 6px;
     cursor: pointer;
 }
+.btn-green{
+    background: #00A64E;
+    transition: box-shadow 300ms ease;
+    color: var(--text-secondary);
+    margin-top: 1rem;
+    text-align: center;
+}
 .btn-blue{
     margin-top: 1rem;
     background: var(--tertiary);
@@ -57,4 +70,28 @@ img{
 }
 .btn-blue:hover{
     box-shadow: var(--btn-shadow-blue);
+}
+.btn-green:hover{
+    box-shadow: var(--btn-shadow-green);
+}
+/* .alert{
+    padding: 1rem 2rem;
+    border-radius: 6px 0px 0px 6px;
+    position: absolute;
+    height: auto;
+    max-width: 450px;
+    top: 82px;
+    z-index: -1;
+    right: 450px;
+    transform: translateX(800px);
+    text-align: center;
+    transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+    color: var(--text-secondary);
+} */
+
+.alert-error{
+    background: rgb(255, 84, 84);
+    color: rgb(255, 84, 84);
+    /* animation: toastAnimationCart 5s cubic-bezier(0.16, 1, 0.3, 1); */
+    /* box-shadow: 0px 0px 10px -2px rgb(255, 84, 84); */
 }
