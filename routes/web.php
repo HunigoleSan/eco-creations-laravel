@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\PageController;
-use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -23,5 +23,11 @@ Route::get('/procesar',function (){return view('procesar.index');})->name('proce
 // Esta ruta utiliza el método 'login' del AuthController y tiene el nombre 'login'.
 // El nombre de la ruta debe ser 'login' para que el middleware de autenticación redirija aquí 
 // automáticamente si un usuario no autenticado intenta acceder a una ruta protegida.
-Route::get('/lv-admin', [AuthController::class, 'login'])->name('login');
+Route::get('/login', [LoginController::class, 'showLogin'])->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('login.attempt');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
+Route::middleware(['auth'])->group(function(){
+    Route::get('/admin',function(){ return view('admin.dashboard'); })->name('ventas');
+    /* Route::get('/admin/ventas',function(){ return view(''); })->name('ventas'); */
+});

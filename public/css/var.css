@@ -8,6 +8,7 @@
 
     --bg-sage-green: #6AA16D;
     --bg-green: #318235;
+    --bg-light-green: #FAFFFA;
     --bg-dark-blue: #1B1F27;
 
     --bg-light-grey: rgb(233, 233, 233);
@@ -22,6 +23,8 @@
     --text-secondary: #ffffff;
     --text-grey: #81858D;
     --text-sage-green: #6AA16D;
+    --text-green: #318235;
+    --text-green-fresh: #39A92A;
 
 
     /* BORDER COLOR */
