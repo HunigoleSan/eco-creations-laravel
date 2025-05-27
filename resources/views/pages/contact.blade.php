@@ -42,8 +42,8 @@
             </div>
 
             <div class="contact-page__form-group">
-                <label for="razon-social" class="contact-page__label">Razón Social (Opcional)</label>
-                <input type="text" id="razon-social" name="razon-social" class="contact-page__input"
+                <label for="razon_social" class="contact-page__label">Razón Social (Opcional)</label>
+                <input type="text" id="razon_social" name="razon_social" class="contact-page__input"
                     placeholder="Ej: InnovaTech Soluciones Digitales S.A.C.">
             </div>
 

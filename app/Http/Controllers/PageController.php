@@ -26,7 +26,7 @@ class PageController extends Controller
             'apellidos' => 'required',
             'correo' => 'required|email',
             'asunto' => 'required',
-            'razon-social' => 'nullable',
+            'razon_social' => 'nullable', // cambiado a guion bajo
             'ruc' => 'nullable',
         ]);
 
